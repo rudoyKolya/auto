@@ -1,11 +1,11 @@
 import {Route, Routes} from "react-router";
-import {HomePage} from "./src/page/home/homePage";
-import {AboutPage} from "./src/page/about/AboutPage";
-import {PreOrderPage} from "./src/page/PreOrder/PreOrderPage";
-import {Header} from "./src/components/header/header";
+import {HomePage} from "./page/home/homePage";
+import {AboutPage} from "./page/about/AboutPage";
+import {PreOrderPage} from "./page/PreOrder/PreOrderPage";
+import {Header} from "./components/header/header";
 import React from "react";
-import "./src/styles/interactive.css";
-import {ContactsPage} from "./src/page/Contacts/ContactsPage";
+import "./styles/interactive.css";
+import {ContactsPage} from "./page/Contacts/ContactsPage";
 
 
 function App() {

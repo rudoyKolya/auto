@@ -1,7 +1,9 @@
+// src/components/Header/Header.jsx
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import styles from "./Header.module.css";
-import {createPortal} from "react-dom";
+import logo from "../../assets/kubauto-logo.svg"; // <-- use SVG (wordmark included)
 
 const ANIM_MS = 280;
 
@@ -26,7 +28,6 @@ export const Header = () => {
         const body = document.body;
         const scrollY = window.scrollY;
 
-        // save previous inline styles to restore precisely
         const prev = {
             position: body.style.position,
             top: body.style.top,
@@ -44,7 +45,6 @@ export const Header = () => {
         body.style.overflow = "hidden";
 
         return () => {
-            // restore styles
             body.style.position = prev.position;
             body.style.top = prev.top;
             body.style.left = prev.left;
@@ -52,7 +52,6 @@ export const Header = () => {
             body.style.width = prev.width;
             body.style.overflow = prev.overflow;
 
-            // restore scroll position
             window.scrollTo(0, scrollY);
         };
     }, [menuOpen]);
@@ -69,8 +68,7 @@ export const Header = () => {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [menuMounted]);
 
-    const navClass = ({ isActive }) =>
-        isActive ? styles.navActive : styles.navLink;
+    const navClass = ({ isActive }) => (isActive ? styles.navActive : styles.navLink);
 
     const mobileNavClass = ({ isActive }) =>
         isActive ? `${styles.mobileLink} ${styles.mobileLinkActive}` : styles.mobileLink;
@@ -78,13 +76,9 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.container}>
-                {/* Logo */}
-                <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-                    <span className={styles.logoMark} />
-                    <div className={styles.logoText}>
-                        <span className={styles.logoName}>KUB AUTO</span>
-                        <span className={styles.logoSub}>Premium pre-order concierge</span>
-                    </div>
+                {/* Logo (SVG already contains the name, so no extra text) */}
+                <NavLink to="/" className={styles.logo} onClick={closeMenu} aria-label="KubAuto home">
+                    <img className={styles.logoImg} src={logo} alt="KubAuto" draggable={false} />
                 </NavLink>
 
                 {/* Desktop navigation */}
@@ -151,14 +145,10 @@ export const Header = () => {
                             aria-hidden={!menuOpen}
                         />
 
-                        <aside
-                            className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
-                            aria-hidden={!menuOpen}
-                        >
+                        <aside className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`} aria-hidden={!menuOpen}>
                             <div className={styles.mobileTop}>
-                                <NavLink to="/" className={styles.mobileLogo} onClick={closeMenu}>
-                                    <span className={styles.logoMark} />
-                                    <span className={styles.mobileLogoText}>KUB AUTO</span>
+                                <NavLink to="/" className={styles.mobileLogo} onClick={closeMenu} aria-label="KubAuto home">
+                                    <img className={styles.logoImgSmall} src={logo} alt="KubAuto" draggable={false} />
                                 </NavLink>
 
                                 <button type="button" className={styles.close} onClick={closeMenu} aria-label="Close menu">
@@ -190,7 +180,12 @@ export const Header = () => {
                                 >
                                     WhatsApp
                                 </a>
-                                <a href="https://t.me/kolyakolya12" target="_blank" rel="noreferrer" className={styles.mobileActionLink}>
+                                <a
+                                    href="https://t.me/kolyakolya12"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={styles.mobileActionLink}
+                                >
                                     Telegram
                                 </a>
 

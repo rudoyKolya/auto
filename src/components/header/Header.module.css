@@ -1,9 +1,5 @@
 /* src/components/Header/Header.module.css */
 
-/* =========================
-   DESKTOP BASE
-   ========================= */
-
 .header {
     position: sticky;
     top: 0;
@@ -35,6 +31,7 @@
     min-width: 220px;
 }
 
+/* OLD mark kept (unused now, but safe to keep) */
 .logoMark {
     width: 36px;
     height: 36px;
@@ -43,6 +40,7 @@
     flex: 0 0 auto;
 }
 
+/* OLD text kept (unused now, but safe to keep) */
 .logoText {
     display: flex;
     flex-direction: column;
@@ -61,6 +59,23 @@
     font-size: 11px;
     font-weight: 500;
     color: #b9bdc7;
+}
+
+/* NEW: SVG logo image (wordmark) */
+.logoImg {
+    height: 42px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.logoImgSmall {
+    height: 30px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 
 /* Desktop nav */
@@ -174,7 +189,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
-    z-index: 10000; /* было 999 */
+    z-index: 10000;
 }
 
 .mobileMenu {
@@ -189,7 +204,7 @@
     color: #ffffff;
     transform: translateX(100%);
     transition: transform 0.28s ease;
-    z-index: 10001; /* было 1000 */
+    z-index: 10001;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -302,6 +317,13 @@
     .burger {
         display: block;
     }
+
+    .logoImg {
+        height: 36px;
+    }
+}
+.logo {
+    backdrop-filter: none;
 }
 
 /* Optional: tighten slightly at mid widths */

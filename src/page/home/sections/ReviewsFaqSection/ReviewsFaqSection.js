@@ -2,19 +2,19 @@ import styles from "./ReviewsFaqSection.module.css";
 
 const REVIEWS = [
     {
-        quote: "“Everything on time.”",
-        text: "Contract, reports, delivery — clear control at every stage.",
-        meta: "A.K., Vilnius",
+        quote: "“Everything matched what we agreed.”",
+        text: "Clear steps, regular updates, and no pressure. The price and timeline stayed the same as discussed, and the handover was smooth.",
+        meta: "Andrius Kazlauskas, Vilnius (LT)",
     },
     {
-        quote: "“No surprises.”",
-        text: "All costs were fixed in advance. Documentation was flawless.",
-        meta: "N.S., Kaunas",
+        quote: "“I knew what was happening at every stage.”",
+        text: "They sent options with full details, explained what to watch for, and handled the paperwork properly. No unnecessary calls, just clear communication.",
+        meta: "Nerijus Šimkus, Kaunas (LT)",
     },
     {
-        quote: "“High-level service.”",
-        text: "Verification, logistics and handover were handled professionally.",
-        meta: "M.P., Riga",
+        quote: "“The car arrived exactly as described.”",
+        text: "Inspection results were shared upfront, logistics were organized without delays, and the documents were ready on time. Overall — professional and calm process.",
+        meta: "Mārtiņš Pētersons, Riga (LV)",
     },
 ];
 
@@ -73,7 +73,7 @@ export const ReviewsFaqSection = () => {
                 <div className={styles.sectionHead}>
                     <h2 className={styles.h2}>Client notes</h2>
                     <p className={styles.sub}>
-                        Reserved feedback focused on predictability, control and result.
+                        Short feedback from clients who value predictability, clarity and control.
                     </p>
                 </div>
 
