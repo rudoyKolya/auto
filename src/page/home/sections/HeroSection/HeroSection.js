@@ -23,7 +23,7 @@ export const HeroSection = () => {
                     <a href="https://wa.me/37068803122" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
                         WhatsApp
                     </a>
-                    <a href="https://wa.me/37068803122" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
+                    <a href="https://t.me/dkud13" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
                         Telegram
                     </a>
                 </div>
